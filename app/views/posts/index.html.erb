@@ -5,7 +5,9 @@
 <% end %>
 
 <% @posts.each do |post| %>
-  <div class="post">
+  <%# カスタムデータ、HT。data-<情報>。HTMLに対して任意の属性を持たせられる機能のこと。
+  属性値に文字列で情報を与えることができます。 %>
+  <div class="post" data-id=<%= post.id %>> data-check=<%= post.checked %>>
     <div class="post-date">
       投稿日時：<%= post.created_at %>
     </div>

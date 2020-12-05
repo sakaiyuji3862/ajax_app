@@ -10,9 +10,10 @@ class PostsController < ApplicationController
     redirect_to action: :index
   end
   
-  #『既読』の操作を行ったときに実行されるアクション
+  #『既読』の操作(投稿をclickしたときに)を行ったときに実行されるアクション
   def checked
-    # ルーティングで設定したURLパラメーターから、既読したメモのidが渡されるように設定するので、そのidを使用して該当するレコードを取得している。
+    # ルーティングで設定したURLパラメーターから、既読したメモのidが渡されるように設定するので、
+    # そのidを使用して該当するレコードを取得している。どの投稿をクリックしたか。
     post = Post.find(params[:id]) 
     # post.checkedという既読であるか否かを判定するプロパティを指定
     if post.checked
